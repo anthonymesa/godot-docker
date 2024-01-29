@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  godot-dev:
+    image: godot-dev-3.2.3-alpine:latest
+    environment:
+      - GODOT_VERSION=3.2.3
+      - VNC_PASSWORD=new_password
+      - DISPLAY=:1
+      - SCREEN_GEOMETRY=1280x720x24
+      - HTTPS_GIT_REPO=https://github.com/anthonymesa/ourobouros.git
+    ports:
+      - 5999:5900
+    volumes:
+      - "C:/Users/Anthony.Mesa/Documents/1 Documents/ourobouros:/godotapp"
+    restart: unless-stopped

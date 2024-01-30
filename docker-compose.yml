@@ -2,13 +2,14 @@ version: "3.8"
 
 services:
   godot-dev:
-    image: godot-dev-3.2.3-alpine:latest
+    image: godot-dev-3.5.3-mono:latest
     environment:
-      - GODOT_VERSION=3.2.3
+      - GODOT_VERSION=3.5.3
       - VNC_PASSWORD=new_password
       - DISPLAY=:1
       - SCREEN_GEOMETRY=1280x720x24
       - HTTPS_GIT_REPO=https://github.com/anthonymesa/ourobouros.git
+      - EDITOR=1
     ports:
       - 5999:5900
     volumes:

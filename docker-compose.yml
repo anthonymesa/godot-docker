@@ -2,16 +2,16 @@ version: "3.8"
 
 services:
   godot-dev:
-    image: godot-dev-3.5.3-mono:latest
+    image: godot-dev-4.2.1-mono:latest
     environment:
-      - GODOT_VERSION=3.5.3
+      - GODOT_VERSION=4.2.1
       - VNC_PASSWORD=new_password
       - DISPLAY=:1
       - SCREEN_GEOMETRY=1280x720x24
-      - HTTPS_GIT_REPO=https://github.com/anthonymesa/ourobouros.git
+      - GIT_REPO=https://github.com/anthonymesa/ourobouros.git
       - EDITOR=1
     ports:
       - 5999:5900
     volumes:
-      - "C:/Users/Anthony.Mesa/Documents/1 Documents/ourobouros:/godotapp"
+      - "C:/Users/Anthony.Mesa/Documents/ourobouros:/godotapp"
     restart: unless-stopped

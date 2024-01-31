@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export MONO_PATH=/usr/lib/mono/4.0:/usr/lib/mono/4.5:.
+export MONO_PATH=/usr/share/dotnet/sdk/8*/ref:.
 
 # Check if the EDITOR environment variable is set to a non-empty value
 if [[ -n "$EDITOR" ]]; then
@@ -16,10 +16,10 @@ if [[ -n "$EDITOR" ]]; then
 
     # Wait for Xvfb to start
     sleep 5
-
+    
     # Start the Godot editor
-    /usr/local/bin/godot/godot_editor --path /godotapp/project.godot --editor
+    "/usr/local/bin/godot/$GODOT_BIN" --path /godotapp/project.godot
 else
     # Start Godot headless
-    /usr/local/bin/godot/godot --path /godotapp/project.godot --editor 
+    "/usr/local/bin/godot/$GODOT_BIN" --path /godotapp/project.godot --display-driver headless
 fi
